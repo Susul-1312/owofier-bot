@@ -7,6 +7,7 @@ const token = process.env.TOKEN;
 client.on("ready", () => {
 	console.log("I'm in");
 	console.log(client.user.username);
+	console.log(client.guilds.cache.map(g => g.name).join("\n"));
 });
 
 client.on("message", msg => {
@@ -14,7 +15,13 @@ client.on("message", msg => {
 
 	msgToSend = msg.content // setting msgToSend so it doesnt break on every edit
 
-	msgToSend = msgToSend.split("l").join("w"); // making it more OwO
+	msgToSend = msgToSend.split("r").join("w"); // making it more OwO
+	msgToSend = msgToSend.split("n").join("wn");
+	msgToSend = msgToSend.split("p").join("wp");
+	msgToSend = msgToSend.split("v").join("wv");
+	msgToSend = msgToSend.split("m").join("wm");
+	msgToSend = msgToSend.split("i").join("iw");
+	msgToSend = msgToSend.split("l").join("w");
 
 	let msgEmbed = new Discord.MessageEmbed()
 		.setAuthor(msg.author.username, msg.author.avatarURL())
